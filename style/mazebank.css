@@ -1,0 +1,209 @@
+@font-face {
+   font-family: Circular;
+   src: url(../fonts/circular/CircularStd-Book.otf);
+}
+@font-face {
+   font-family: Light;
+   src: url(../fonts/circular/CircularStd-Light.otf);
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Circular;
+   background-image: url(../img/mazebank/pattern.png);
+   background-size: 50px;
+   height: 100vh;
+}
+
+body::before {
+   display: block;
+   content: "";
+   height: 7px;
+   width: 100%;
+   background: crimson;
+}
+
+header {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 70px;
+   border-bottom: 1px solid #eee;
+   background: white;
+}
+header img {
+   height: 70px;
+   object-fit: contain;
+}
+
+header a.btn {
+   text-decoration: none;
+   color: crimson;
+   padding: 3px 10px;
+   border-radius: 3px;
+   transition: transform .3s ease-in-out;
+   font-size: 10pt;
+}
+
+header a:hover {
+   color: crimson;
+   background: white;
+   text-decoration: underline;
+}
+
+section.landing {
+   display: grid;
+   grid-template-rows: 100%;
+   grid-template-columns: 1fr 1fr;
+   position: relative;
+   box-sizing: unset;
+   object-fit: cover;
+   background: white;
+   height: calc(100% - 77px);
+   overflow: hidden;
+   gap: 2em;
+}
+
+section.landing img {
+   width: 100%;
+   min-height: 100%;
+   object-fit: cover;
+}
+
+section aside {
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   padding: 30px;
+   padding-left: 0;
+}
+
+h1 {
+   font-size: 30pt;
+}
+
+h2 {
+   color: crimson;
+   margin-bottom: 30px;
+}
+
+h3 {
+   font-family: Light;
+   opacity: 0.4;
+}
+
+div.offer {
+   padding: 30px;
+   background: #eee;
+   border-radius: 20px;
+   margin-bottom: 30px;
+   animation: coming_right 2s ease-in-out;
+}
+div.info {
+   padding: 30px;
+   background: #eee;
+   border-radius: 20px;
+}
+
+button {
+   box-sizing: border-box;
+   border: none;
+   padding: 5px 15px;
+   border-radius: 5px;
+   cursor: pointer;
+   font-family: Light;
+}
+button i {
+   margin-right: 10px;
+   transition: all .2s ease-in-out;
+}
+.red {
+   background: crimson;
+   color: white;
+   border: 2px solid crimson;
+   margin-right: 10px;
+}
+.red:hover {
+   background: rgb(255, 23, 69);
+   /* color: crimson; */
+   border: 2px solid rgb(255, 23, 69);
+}
+.light {
+   border: 2px solid crimson;
+   color: crimson;
+}
+.light:hover i {
+   /* transform: translateX(5px); */
+   animation: kart 1s ease-out infinite;
+}
+.light i {
+   transform: translateX(-10px);
+}
+button:hover i {
+   transform: rotate(-20deg);
+}
+.noanim:hover i {
+   transform: none;
+}
+
+.info h3, .offer h3 {
+   margin-bottom: 30px;
+}
+
+.offer h2 i {
+   width: 30px;
+}
+
+.info h2 i {
+   width: 30px;
+}
+
+h4 {
+   font-family: Light;
+}
+
+@keyframes coming_right {
+   from {
+      transform: translateX(50px);
+      opacity: 0;
+   }
+   to {
+      transform: none;
+      opacity: 1;
+   }
+}
+
+@keyframes kart {
+   from {transform: translateX(-10px); opacity: 1;}
+   to { transform: translateX(5px); opacity: 0;}
+}
+
+.credits {
+   position: absolute;
+   right: 20px;
+   bottom: 20px;
+   opacity: 0.4;
+}
+a {
+   color: crimson;
+   text-decoration: none;
+}
+a:hover {
+   text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+   section aside {
+      padding-left: 0;
+      padding-right: 1em;
+   }
+   section.landing {
+      gap: 1em;
+      height: auto;
+   }
+}
