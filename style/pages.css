@@ -825,6 +825,10 @@ a.rounded {
    width: max-content;
 }
 
+img[alt*='iFruit Colors'] {
+   position: sticky;
+   top: 80px;
+}
 @media (max-width: 800px) {
    nav {
       display: none;
@@ -874,7 +878,7 @@ a.rounded {
       padding-left: 5%;
    }
    .services-grid {
-      grid-template-columns: auto auto;
+      grid-template-columns: auto;
       column-gap: 0;
       row-gap: 1em;
       grid-template-rows: 550px auto;
@@ -912,5 +916,8 @@ a.rounded {
    }
    article section h1 {
       font-size: 17pt;
+   }
+   img[alt*='iFruit Colors'] {
+      position: initial;
    }
 }
